@@ -11,11 +11,53 @@ main {
 }
 
 
+
+/* Removing default styles on form */
+
+input[type="text"],
+button {
+  background: none;       /* Removes the default background */
+  border: none;           /* Removes the default border */
+  margin: 0;              /* Removes the default margin */
+  padding: 0;             /* Removes the default padding */
+  outline: none;          /* Removes the focus outline */
+  box-shadow: none;       /* Removes the box-shadow if any */
+  font-family: inherit;   /* Inherits the font from the parent element */
+  font-size: inherit;     /* Inherits the font size from the parent element */
+  color: inherit;         /* Inherits the font color from the parent element */
+  line-height: inherit;   /* Inherits the line height from the parent element */
+  appearance: none;       /* Removes default styling for elements like buttons */
+  -webkit-appearance: none; /* Same as above for WebKit browsers like Chrome and Safari */
+  -moz-appearance: none;    /* Same as above for Firefox */
+}
+
+/* You might also want to style the button specifically to look like a clickable element */
+button {
+  cursor: pointer; /* Changes the cursor to signify it can be clicked */
+  /* Add other styles for hover, active, and focus states if needed */
+}
+
+/* Remove the inner padding and search cancel button in WebKit browsers */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+
+
 .movie-list__container {
+    position: relative;
     width: 75%;
     height: auto;
     border-radius: 5px;
+
 }
+
+
+
 
 
 
@@ -78,15 +120,35 @@ main {
 
 
 
-/*** Form Styles ***/
+
+
+/*** Search Form Styles ***/
+
+.movie-list__form-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 13px;    
+
+    
+}
+
+
+
+
+.movie-list__form-container .movie-list__search-form {
+    padding: 9px;
+    border: 6px solid #D1D5DB; 
+    background: #F9FAFB;
+}
 
 
 
 
 
 
-/*** Form Styles ***/
-
+/*** End Search Form Styles ***/
 
 
 
