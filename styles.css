@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    font-family: 'Inter', Arial;
+    background: #1C1C1C;
+} 
+
+main {
+    display: flex;
+    justify-content: center;
+    margin: 100px 0px;
+}
+
+
+.movie-list__container {
+    width: 75%;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+
+/*** Header Styles ***/
+
+.movie-list__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 200px;
+    align-items: center;
+    position: relative;
+    padding: 82px 45px 78px;
+    height: 208px;
+    background: url('assets/40637dd9b0240098474b6d8dd9487d8c.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top -150px;
+}
+
+
+
+
+.movie-list__header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.63); 
+    z-index: 1; 
+}
+
+.movie-list__header h1, 
+.movie-list__header h2 {
+    color: #fff;
+    z-index: 3;
+}
+
+.movie-list__header h1 {
+    font-size: 42.795px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 23.775px; /* 55.556% */
+    letter-spacing: -1.926px;
+}
+
+.movie-list__header h2 {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px; /* 142.857% */
+}
+
+
+
+
+/*** End Header Styles ***/
+
+
+
+/*** Form Styles ***/
+
+
+
+
+
+
+/*** Form Styles ***/
+
+
+
+
+/*** Movie List Body ****/
+
+
+
+
+.movie-list__body {
+    background-color: #fff;
+    padding: 193px 201px 269px;
+
+}
+
+/*** End Movie List Body ****/
