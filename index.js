@@ -45,11 +45,6 @@ document.querySelector('form button').addEventListener('click', (e) => {
                 const genre = data.Genre;
                 const plot = data.Plot;
 
-
-
-
-                console.log(data)
-                console.log(plot) 
             
             })
             .catch(error => {
@@ -62,13 +57,26 @@ document.querySelector('form button').addEventListener('click', (e) => {
 
         
     })
+
+
+
     .catch(error => {
         console.error('Error:', error);
     });
 
 
 
-  
+  //Remove icon on click 
+  const removeFilmIcon = document.querySelector('.movie-list__film-icon');
+  removeFilmIcon.classList.add('remove')
+
+
+
+
+
+
+
+    
     e.preventDefault()
 
 

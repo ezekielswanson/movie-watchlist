@@ -186,4 +186,56 @@ input[type="search"]::-webkit-search-results-decoration {
 
 }
 
+
+.movie-list__body .movie-list__film-icon {
+    text-align: center;
+}
+
+
+.movie-list__body .movie-list__film-icon.remove {
+    display: none;
+
+}
+
+
+
+
+/* Movie list row */
+
+
+.movie-list__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 21px;
+}
+
+.movie-list__row img {
+    width: 99px;
+    height: 147.411px;
+}
+
+
+.movie-list__row .movie-list__row--text__container .movie-list__row--text__title, 
+.movie-list__row .movie-list__row--text__container .movie-list__row--text__info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.movie-list__row .movie-list__row--text__container .movie-list__row--text__title h3 {
+    margin-right: 8px;
+}
+
+.movie-list__row .movie-list__row--text__container .movie-list__row--text__title svg {
+    margin-right: 4px;
+}
+
+
+
+.movie-list__row .movie-list__row--text__container .movie-list__row--text__info > p:first-child {
+    margin-right: 19px;
+}
+
 /*** End Movie List Body ****/
