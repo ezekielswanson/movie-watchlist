@@ -10,10 +10,12 @@ send api
 */
 
 document.querySelector('form button').addEventListener('click', (e) => {
+    // Prevent default form submission behavior
+    e.preventDefault();  
 
-    //Variables
+    //Var's for first fetch
     const movieTitle = document.querySelector('#searchInput').value
-    e.preventDefault()
+
 
 
     //Fetching by search to return all serach results
@@ -23,17 +25,31 @@ document.querySelector('form button').addEventListener('click', (e) => {
 
         //console.log(data)
         //get run time, Ratings, Genre, 
-        data.Search.slice(0, 15).forEach(movie => {
+        data.Search.forEach(movie => {
             //console.log(movie.imdbID)
             const movieId = movie.imdbID
             //console.log(movieId)
 
+
+
             //Fetching by id to return id specific properties 
-            fetch(`http://www.omdbapi.com/?apikey=f89c6c72&t=${movieId}`)
+            fetch(`http://www.omdbapi.com/?apikey=f89c6c72&i=${movieId}`)
             .then(res => res.json())
             .then(data => {
 
+                //Var's for second fetch
+                const title = data.Title;
+                const poster = data.Poster;
+                const ratings = data.imdbRating;
+                const runTime = data.Runtime;
+                const genre = data.Genre;
+                const plot = data.Plot;
+
+
+
+
                 console.log(data)
+                console.log(plot) 
             
             })
             .catch(error => {
@@ -53,7 +69,7 @@ document.querySelector('form button').addEventListener('click', (e) => {
 
 
   
-
+    e.preventDefault()
 
 
 
