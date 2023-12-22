@@ -48,6 +48,11 @@ input[type="search"]::-webkit-search-results-decoration {
 
 
 
+h1, h2, h3, h4, h5, p {
+    margin: 0px;
+}
+
+
 .movie-list__container {
     position: relative;
     width: 75%;
@@ -226,6 +231,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .movie-list__row .movie-list__row--text__container .movie-list__row--text__title h3 {
     margin-right: 8px;
+    margin-bottom: 11px;
 }
 
 .movie-list__row .movie-list__row--text__container .movie-list__row--text__title svg {
@@ -236,6 +242,20 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .movie-list__row .movie-list__row--text__container .movie-list__row--text__info > p:first-child {
     margin-right: 19px;
+}
+
+
+.movie-list__row .movie-list__row--text__container .movie-list__row--text__info .movie-list__row--text__info--btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 30px;
+    gap: 5px;
+}
+
+
+.movie-list__row .movie-list__row--text__container .movie-list__row--text__info--desc {
+    margin-top: 8px;
 }
 
 /*** End Movie List Body ****/

@@ -1,7 +1,3 @@
-
-
-
-
 /*Search Api
 
 get input value 
@@ -45,6 +41,13 @@ document.querySelector('form button').addEventListener('click', (e) => {
                 const genre = data.Genre;
                 const plot = data.Plot;
 
+
+                //Now get code to render
+                //map method on the data? 
+                //render out html and insert values 
+
+                console.log(data)
+
             
             })
             .catch(error => {
@@ -74,17 +77,4 @@ document.querySelector('form button').addEventListener('click', (e) => {
 
 
 
-
-
-    
-    e.preventDefault()
-
-
-
-
 })
-
-
-
-
-
