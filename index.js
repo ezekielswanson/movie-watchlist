@@ -3,61 +3,49 @@
 get input value 
 get click eent on submit
 send api
+
 */
 
-document.querySelector('form button').addEventListener('click', handleMovieSearch)
 
-    //Holds logic for the all the api items
-    async function handleMovieSearch(e) {
-        e.preventDefault(); 
 
-        //Removing film icon on load
-        removeFilmIcon()
+function handleClick() {
+    const btn = document.querySelector('form button');
+    btn.addEventListener('click', function() {
 
-        //Variables
-        const movieTitle = document.querySelector('#searchInput').value;
+        //Handling movie Search
+        handleMovieSearch();
 
-        //get movie id of the searched movie and use thhat id ine the second fetch
- 
 
-        //Fetch by search
-        try {
-            const res = await fetch(`http://www.omdbapi.com/?apikey=f89c6c72&s=${movieTitle}`);
-            const data = await res.json();
-            console.log(data);
-    
-            if (data.Search) {
-                //Looping through and grabbing id
-                for (const movie of data.Search) {
-                    const movieId = movie.imdbID;
-                    console.log(movieId);
-    
-                    try {
-                        const resDetails = await fetch(`http://www.omdbapi.com/?apikey=f89c6c72&i=${movieId}`);
-                        const movieData = await resDetails.json();
-                        console.log(movieData);
+    })
+}
 
-                        const title = movieData.Title;
-                        const poster = movieData.Poster;
-                        const ratings = movieData.imdbRating;
-                        const runTime = movieData.Runtime;
-                        const genre = movieData.Genre;
-                        const plot = movieData.Plot;
-            
-                    } 
-                    catch (error) {
-                        console.error('Error fetching movie details:', error);
-                    }
-                }
-            }
-        } 
-        
-        catch (error) {
-            console.error('Error:', error);
-        }
+handleClick();
 
+
+
+
+async function handleMovieSearch(e) {
+    e.preventDefault();
+
+    //Var's
+    const movieTitle = document.querySelector('#searchInput').value;
+
+    try {
+        const searchResults = await fetchMoviesBySearch(movieTitle);
+        await Promise.all(searchResults.map async (movie) => {
+            const movieDetails = await fetchMovieDetails(movie.imdbID);
+            renderMovie(movieDetails)
+        })
     }
-   
+
+    catch (error) {
+        console.error('Error:', error);
+    }
+
+    removeFilmIcon();
+}
+
+}
 
 
 
@@ -65,7 +53,7 @@ document.querySelector('form button').addEventListener('click', handleMovieSearc
 
 
 
-
+//Removing film icon on load
 function removeFilmIcon() {
     const removeFilmIcon = document.querySelector('.movie-list__film-icon');
     removeFilmIcon.classList.add('remove');
