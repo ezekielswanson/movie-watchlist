@@ -98,9 +98,10 @@ h1, h2, h3, h4, h5, p {
 }
 
 .movie-list__header h1, 
-.movie-list__header h2 {
+.movie-list__header a {
     color: #fff;
     z-index: 3;
+    text-decoration: none;
 }
 
 .movie-list__header h1 {
@@ -111,7 +112,7 @@ h1, h2, h3, h4, h5, p {
     letter-spacing: -1.926px;
 }
 
-.movie-list__header h2 {
+.movie-list__header a {
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
@@ -154,7 +155,8 @@ h1, h2, h3, h4, h5, p {
     background: #FFF;
     border: 1px solid #D1D5DB; 
     border-radius: 6px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
 }
 
 .movie-list__form-container .movie-list__search-form .movie-list__search-form-right-side {
@@ -212,8 +214,23 @@ h1, h2, h3, h4, h5, p {
     display: flex;
     flex-direction: row;
     align-items: center;
+    position: relative;
     gap: 21px;
+    margin-bottom: 24px;
 }
+
+
+/*
+.movie-list__row::after {
+    position: absolute;
+    top: 113px;
+    margin-top: 41px;
+    width: 461px;
+    height: 1.5px;
+    background: #E5E7EB;
+    content: '';
+}
+*/
 
 .movie-list__row img {
     width: 99px;
@@ -221,7 +238,14 @@ h1, h2, h3, h4, h5, p {
 }
 
 
-.movie-list__row .movie-list__row--text__container .movie-list__row--text__title, 
+.movie-list__row .movie-list__row--text__container .movie-list__row--text__title  {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+
+
 .movie-list__row .movie-list__row--text__container .movie-list__row--text__info {
     display: flex;
     flex-direction: row;
