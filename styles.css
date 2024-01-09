@@ -12,7 +12,7 @@ main {
 
 
 
-/* Removing default styles on form */
+/* Removing default styles */
 
 input[type="text"],
 button {
@@ -45,6 +45,13 @@ input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance: none;
   appearance: none;
 }
+
+
+a:visited {
+    color: inherit; 
+}
+
+
 
 
 
@@ -147,7 +154,7 @@ h1, h2, h3, h4, h5, p {
     align-items: center;
     justify-content: center; 
     position: absolute;
-    top: 348px;
+    top: 350px;
     z-index: 20;
     width: 70%;  
     height: 20px;
@@ -193,6 +200,34 @@ h1, h2, h3, h4, h5, p {
 
 }
 
+.movie-list__body .movie-list__body--text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.movie-list__body .movie-list__body--text-container h2 {
+    color: #DFDDDD;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28.5px; 
+}
+
+.movie-list__body .movie-list__body--text-container a {
+    display: flex;
+    flex-direction: row;
+    align-items: Center;
+    text-decoration: none;
+    gap: 7px;
+    color: #363636;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px; 
+}
+
 
 .movie-list__body .movie-list__film-icon {
     text-align: center;
@@ -219,6 +254,15 @@ h1, h2, h3, h4, h5, p {
     margin-bottom: 24px;
 }
 
+
+.movie-list__row .movie-list__row--hz-line {
+    position: absolute;
+    bottom: -9px;
+    margin-top: 41px;
+    width: 461px;
+    height: 1.5px;
+    background: #E5E7EB;
+}
 
 /*
 .movie-list__row::after {
