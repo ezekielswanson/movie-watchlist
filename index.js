@@ -84,6 +84,3 @@ function removeFilmIcon() {
     removeFilmIcon.classList.add('remove');
 }
 
-
-
-
