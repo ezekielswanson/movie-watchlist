@@ -1,8 +1,10 @@
 
 /*** Wathclist Js  ***/
 
-
+//Storing added movies
 const addedMovies = [];
+
+
 
 //Adding movie to local storage
 document.querySelector('.movie-list__body').addEventListener('click', (e) => {
