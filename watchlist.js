@@ -41,6 +41,7 @@ document.querySelector('.movie-list__body').addEventListener('click', (e) => {
 
     console.log(addedMovies)
     console.log(renderAddedMovies());
+    renderAddedMovies()
 });
 
 
@@ -97,7 +98,7 @@ function displayWatchList() {
 
 
 function renderAddedMovies() {
-    const htmlContainer = document.querySelector('.movie-list__body');
-    htmlContainer.innerHTML = displayWatchList(addedMovies);
+    const htmlContainer = document.querySelector('.movie-list__body.watchlist');
+    htmlContainer.innerHTML = displayWatchList();
 
 }
