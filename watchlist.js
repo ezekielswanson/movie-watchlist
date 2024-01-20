@@ -82,4 +82,16 @@ function displayAddedMovies() {
 }
 
 
-//remove text and button on ?
+//remove from local storgae on click
+function removeMovie() {
+    document.querySelector('.movie-list__body').addEventListener('click', (e) => {
+        console.log(e.target);
+        const btn = e.target.closest('[data-movie-id]');
+        if (btn) {
+            console.log(btn);
+        }
+    });
+}
+
+
+removeMovie();
