@@ -101,7 +101,6 @@ document.querySelector('.movie-list__body').addEventListener('click', (e) => {
 
     if (btn) {
         const selectedMovie = btn.dataset.movieId; 
-        console.log(selectedMovie);
 
         //how do I get access to the movie object used to created html?
         const movieEl = btn.closest('.movie-list__row')
@@ -129,7 +128,6 @@ document.querySelector('.movie-list__body').addEventListener('click', (e) => {
     }
 
     storeInLocalStorage(addedMovies)
-    console.log(addedMovies)
     
 });
 

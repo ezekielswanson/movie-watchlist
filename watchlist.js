@@ -83,12 +83,13 @@ function displayAddedMovies() {
 
 
 //remove from local storgae on click
+//remove the movie with the spec id from the local storage
 function removeMovie(event) {
     document.querySelector('.movie-list__body').addEventListener('click', (event) => {
         console.log(event.target);
         const btn = event.target.closest('[data-movie-id]');
         if (btn) {
-            console.log(btn);
+            localStorage.removeItem("movieArray")
         }
     });
 }
