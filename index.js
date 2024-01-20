@@ -101,7 +101,7 @@ document.querySelector('.movie-list__body').addEventListener('click', (e) => {
 
     if (btn) {
         const selectedMovie = btn.dataset.movieId; 
-        //console.log(selectedMovie);
+        console.log(selectedMovie);
 
         //how do I get access to the movie object used to created html?
         const movieEl = btn.closest('.movie-list__row')
@@ -113,11 +113,15 @@ document.querySelector('.movie-list__body').addEventListener('click', (e) => {
             rating: movieEl.querySelector('.movie-list__row--text__title p').textContent,
             runtime: movieEl.querySelector('.movie-list__row--text__info p:first-child').textContent,
             genre: movieEl.querySelector('.movie-list__row--text__info p:nth-child(2)').textContent,
+            //Var holds btn data attribute
+            id: selectedMovie, 
             plot: movieEl.querySelector('.movie-list__row--text__info--desc p').textContent,
 
 
         }
         
+
+
 
         addedMovies.push(movieObject)
 

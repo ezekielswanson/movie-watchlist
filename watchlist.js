@@ -46,7 +46,7 @@ function renderHTML(movies) {
                 <div class="movie-list__row--text__info">
                     <p>${movie.runtime}</p>
                     <p>${movie.genre}</p>
-                    <button class="movie-list__row--text__info--btn" data-movie-id="${movie.imdbID}">
+                    <button class="movie-list__row--text__info--btn" data-movie-id="${movie.id}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM5 7C4.44772 7 4 7.44772 4 8C4 8.55228 4.44772 9 5 9H11C11.5523 9 12 8.55229 12 8C12 7.44772 11.5523 7 11 7H5Z" fill="#111827"/>
                         </svg>
@@ -83,10 +83,10 @@ function displayAddedMovies() {
 
 
 //remove from local storgae on click
-function removeMovie() {
-    document.querySelector('.movie-list__body').addEventListener('click', (e) => {
-        console.log(e.target);
-        const btn = e.target.closest('[data-movie-id]');
+function removeMovie(event) {
+    document.querySelector('.movie-list__body').addEventListener('click', (event) => {
+        console.log(event.target);
+        const btn = event.target.closest('[data-movie-id]');
         if (btn) {
             console.log(btn);
         }
