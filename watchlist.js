@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //console.log(storedMovies)
-    console.log(addedMovies);
+    //console.log(addedMovies);
 
     displayAddedMovies()
     
@@ -25,12 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function renderHTML(movies) {
     //logging to see if movies array  renders
-    console.log(movies)
+    //console.log(movies)
    
     const watchListHTML = movies.map((movie) => {
 
         //logging to see if movie object renders
-        console.log(movie)
+       // console.log(movie)
         return `
             <div class="movie-list__row">
             <img src="${movie.poster}">
@@ -75,7 +75,7 @@ function renderHTML(movies) {
 function displayAddedMovies() {
     const container = document.querySelector('.movie-list__body.watchlist');
     //log to see if the element is selected
-    console.log(container)
+   // console.log(container)
     //define renterHTML argument with the addedMovies array
     container.innerHTML = renderHTML(addedMovies);
     
@@ -84,12 +84,25 @@ function displayAddedMovies() {
 
 //remove from local storgae on click
 //remove the movie with the spec id from the local storage
+//why does the entire array disappear when I click the button? Removed from local storage 
+//need to get only specifc object from array
 function removeMovie(event) {
     document.querySelector('.movie-list__body').addEventListener('click', (event) => {
-        console.log(event.target);
+        //console.log(event.target);
         const btn = event.target.closest('[data-movie-id]');
         if (btn) {
-            localStorage.removeItem("movieArray")
+           const movieToRemove = localStorage.getItem("movieArray")
+            console.log(movieToRemove)   
+
+
+            const filteredMovies = addedMovies.filter((movie) => {
+                return btn;
+            })
+
+            return filteredMovies;  
+    
+
+            //localStorage.removeItem("movieArray")
         }
     });
 }
