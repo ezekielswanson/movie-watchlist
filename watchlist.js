@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
     //console.log(storedMovies)
     //console.log(addedMovies);
 
-    displayAddedMovies()
+    displayAddedMovies();
+    removeMovie();
     
 
 })
@@ -82,30 +83,87 @@ function displayAddedMovies() {
 }
 
 
-//remove from local storgae on click
+//remove the selected movie from local storgae on click
 //remove the movie with the spec id from the local storage
 //why does the entire array disappear when I click the button? Removed from local storage 
 //need to get only specifc object from array
-function removeMovie(event) {
-    document.querySelector('.movie-list__body').addEventListener('click', (event) => {
+
+/*
+function removeMovie() {
+    document.querySelector('.movie-list__body.watchlist').addEventListener('click', (event) => {
+
         //console.log(event.target);
-        const btn = event.target.closest('[data-movie-id]');
-        if (btn) {
+
+        /*
+        const btn = event.target.closest('.movie-list__row--text__info--btn');
+        const movieId = btn &&  btn.hasAttribute('data-movie-id');
+        if (movieId) {
+        console.log(movieId)
+
+           event.stopPropagation()
+        
+           //gets me access to the array - still in a string from the server
            const movieToRemove = localStorage.getItem("movieArray")
-            console.log(movieToRemove)   
+           
+
+           //getting data from server parse it into usable data
+           const selectedMovied = JSON.parse(movieToRemove)
+  
+           //console.log(selectedMovied)   
+
+           //access movieToRemove array
+           //loop through
+           //get id?
+           //filter out based on id
 
 
+
+
+            /*
             const filteredMovies = addedMovies.filter((movie) => {
                 return btn;
             })
 
             return filteredMovies;  
-    
+            
 
             //localStorage.removeItem("movieArray")
         }
+        
+
+    });
+    
+}
+*/
+
+
+
+
+function removeMovie() {
+    document.querySelector('.movie-list__body.watchlist').addEventListener('click', (event) => {
+        const btn = event.target.closest('.movie-list__row--text__info--btn');
+        
+        if (btn && btn.hasAttribute('data-movie-id')) {
+            const movieId = btn.getAttribute('data-movie-id'); // Get the movie ID from the button
+            console.log(movieId); // Log the movie ID
+            
+            event.stopPropagation();
+            
+            //gets me access to the array - still in a string from the server
+            const movieToRemove = localStorage.getItem("movieArray");
+            
+            //getting data from server parse it into usable data
+            const selectedMovies = JSON.parse(movieToRemove);
+            
+            // Now you can filter out the movie based on movieId
+            // const remainingMovies = selectedMovies.filter(movie => movie.id !== movieId);
+            // ... Update localStorage with remainingMovies ...
+            
+            // No need to log the entire array here
+            // console.log(selectedMovies);
+            
+            // Update the display
+            // displayAddedMovies();
+        }
     });
 }
-
-
-removeMovie();
