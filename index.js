@@ -144,3 +144,4 @@ function storeInLocalStorage(movieArray) {
 
 
 
+
