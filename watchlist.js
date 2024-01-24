@@ -97,13 +97,12 @@ function removeMovie() {
         const btn = event.target.closest('.movie-list__row--text__info--btn');
 
         if (btn && btn.hasAttribute('data-movie-id')) {
+            //Preventing bubbling
+            event.stopImmediatePropagation(); 
+
             const movieId = btn.getAttribute('data-movie-id'); 
             console.log(movieId); // Log the movie ID
 
-            
-            event.stopImmediatePropagation(); 
-         
-            
             //gets me access to the array - still in a string from the server
             const movieToRemove = localStorage.getItem("movieArray");
             
