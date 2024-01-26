@@ -11,6 +11,9 @@ document.querySelector('form button').addEventListener('click', async (e) => {
     // Remove icon on click
     removeFilmIcon() 
 
+    //Reduces Padding
+    reducePadding()
+
     //Form input for fetch
     const movieTitle = document.querySelector('#searchInput').value;
 
@@ -84,13 +87,18 @@ function removeFilmIcon() {
     removeFilmIcon.classList.add('remove');
 }
 
+function reducePadding() {
+    const paddingContainer = document.querySelector(".movie-list__body");
+    paddingContainer.classList.add("active");
+
+
+}
 
 
 
-/*** Watchlist Js ****/
+
+//Store added movies here
 const addedMovies = [];
-
-
 
 
 

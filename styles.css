@@ -31,10 +31,8 @@ button {
   -moz-appearance: none;    /* Same as above for Firefox */
 }
 
-/* You might also want to style the button specifically to look like a clickable element */
 button {
-  cursor: pointer; /* Changes the cursor to signify it can be clicked */
-  /* Add other styles for hover, active, and focus states if needed */
+  cursor: pointer;
 }
 
 /* Remove the inner padding and search cancel button in WebKit browsers */
@@ -55,6 +53,8 @@ a:visited {
 
 
 
+/**** Global Styles ****/   
+
 h1, h2, h3, h4, h5, p {
     margin: 0px;
 }
@@ -64,10 +64,18 @@ h1, h2, h3, h4, h5, p {
     position: relative;
     width: 75%;
     height: auto;
+    background-color: #fff;
     border-radius: 5px;
+
 
 }
 
+
+.movie-list__body.active {
+    padding: 70px;
+}
+
+/**** END Global Styles ****/   
 
 
 
@@ -166,6 +174,26 @@ h1, h2, h3, h4, h5, p {
 
 }
 
+.movie-list__form-container.index .movie-list__search-form {
+    top: 350px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; 
+    position: absolute;
+    z-index: 20;
+    width: 70%;  
+    height: 20px;
+    padding: 9px 0px 9px 9px;
+    background: #FFF;
+    border: 1px solid #D1D5DB; 
+    border-radius: 6px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
+
+
+}
+
 .movie-list__form-container .movie-list__search-form .movie-list__search-form-right-side {
     display: flex;
     align-items: center;
@@ -257,9 +285,9 @@ h1, h2, h3, h4, h5, p {
 
 .movie-list__row .movie-list__row--hz-line {
     position: absolute;
-    bottom: -9px;
+    bottom: -12px;
     margin-top: 41px;
-    width: 461px;
+    width: 100%;
     height: 1.5px;
     background: #E5E7EB;
 }
@@ -327,3 +355,17 @@ h1, h2, h3, h4, h5, p {
 }
 
 /*** End Movie List Body ****/
+
+
+
+
+
+
+
+/****** Watchlist CSS *****/   
+
+
+
+
+
+/****** END Watchlist CSS *****/   

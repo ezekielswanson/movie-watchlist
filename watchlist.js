@@ -17,11 +17,22 @@ document.addEventListener("DOMContentLoaded", () => {
     //console.log(storedMovies)
     //console.log(addedMovies);
 
+    reducePadding();
     displayAddedMovies();
     removeMovie();
     
 
 })
+
+
+
+function reducePadding() {
+    const paddingContainer = document.querySelector(".movie-list__body");
+    paddingContainer.classList.add("active");
+
+
+}
+
 
 
 function renderHTML(movies) {
@@ -131,8 +142,6 @@ function removeMovie() {
           
           
           displayAddedMovies();
-        
-
 
         }
     });
