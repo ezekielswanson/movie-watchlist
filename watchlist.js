@@ -123,9 +123,16 @@ function removeMovie() {
 
           //Updae local storage with filtered array
           localStorage.setItem('movieArray', JSON.stringify(filteredMovies))
+
+          addedMovies = filteredMovies;
+
+          //pass in movieArray array from local storage 
+          console.log(addedMovies)
+          
+          
+          displayAddedMovies();
         
 
-           renderHTML(filteredMovies)
 
         }
     });
