@@ -14,15 +14,24 @@ document.addEventListener("DOMContentLoaded", () => {
         addedMovies = [];
     }
 
-    //console.log(storedMovies)
-    //console.log(addedMovies);
-
-    reducePadding();
-    displayAddedMovies();
-    removeMovie();
+    updateUI();
     
-
 })
+
+//check if movies are in local storage and then invoke
+function updateUI() {
+
+    //conditional to check if movies are in local storage   
+
+    if (addedMovies.length > 0) {
+        displayAddedMovies();
+        removeMovie();
+        reducePadding();
+    }
+    
+}
+
+
 
 
 

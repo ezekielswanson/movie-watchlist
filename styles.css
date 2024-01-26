@@ -369,3 +369,24 @@ h1, h2, h3, h4, h5, p {
 
 
 /****** END Watchlist CSS *****/   
+
+
+
+
+/**** Media Queries ****/   
+
+
+@media (max-width: 1097px) {
+    .movie-list__form-container .movie-list__search-form .movie-list__search-form-right-side {
+        margin-right: 200px;
+    }
+}
+
+@media (max-width: 769px) {
+    .movie-list__form-container .movie-list__search-form .movie-list__search-form-right-side {
+        margin-right: 80px;
+    }
+}
+
+
+/***** END Media Queries ****/  
