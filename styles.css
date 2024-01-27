@@ -7,7 +7,7 @@ body {
 main {
     display: flex;
     justify-content: center;
-    margin: 100px 0px;
+    margin: 100px auto;
 }
 
 
@@ -383,10 +383,37 @@ h1, h2, h3, h4, h5, p {
 }
 
 @media (max-width: 769px) {
+
+
+    .movie-list__header h1 {
+        line-height: 47.775px;
+    }
+
+    .movie-list__header a {
+        line-height: 31px;
+    }
+
+
     .movie-list__form-container .movie-list__search-form .movie-list__search-form-right-side {
         margin-right: 80px;
     }
 }
+
+
+
+
+@media (max-width: 534px) {
+
+
+    .movie-list__header {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+  
+}
+
 
 
 /***** END Media Queries ****/  
