@@ -364,6 +364,21 @@ h1, h2, h3, h4, h5, p {
 
 /****** Watchlist CSS *****/   
 
+.movie-list__body.watchlist.active .movie-list__body--remove-btn {
+    background-color: #2e2e2f;
+    border: none;
+    border-radius: 3px;
+    color: #a5a5a5;
+    padding: 0.5rem 1rem;
+    font-family: "inter", sans-serif;
+    cursor: pointer;
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
 
 
 
@@ -405,15 +420,51 @@ h1, h2, h3, h4, h5, p {
 @media (max-width: 720px) {
 
 
+    .movie-list__body {
+        padding: 100px;
+    }
+
+
     .movie-list__header {
         display: flex;
         flex-direction: column;
         gap: 20px;
+        text-align: center;
+    }
+
+
+    .movie-list__header::before {
+        background: transparent;
+    }
+
+    .movie-list__form-container.index .movie-list__search-form {
+        width: 90%;
+    }
+
+
+    .movie-list__form-container .movie-list__search-form .movie-list__search-form-right-side {
+        margin-right: -35px;
+    }
+
+
+
+
+    .movie-list__row {
+        display: flex;
+        flex-direction: column;
+
     }
 
   
 }
 
+
+@media (max-width: 400px) {
+    .movie-list__form-container.index .movie-list__search-form {
+        top: 305px;
+    }
+
+}
 
 
 /***** END Media Queries ****/  
