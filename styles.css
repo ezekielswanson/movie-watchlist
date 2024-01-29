@@ -364,11 +364,12 @@ h1, h2, h3, h4, h5, p {
 
 /****** Watchlist CSS *****/   
 
-.movie-list__body.watchlist.active .movie-list__body--remove-btn {
+.movie-list__body.watchlist .movie-list__body--remove-btn {
     background-color: #2e2e2f;
+    margin-bottom: 40px;    
     border: none;
     border-radius: 3px;
-    color: #a5a5a5;
+    color: #fff;
     padding: 0.5rem 1rem;
     font-family: "inter", sans-serif;
     cursor: pointer;
@@ -422,6 +423,14 @@ h1, h2, h3, h4, h5, p {
 
     .movie-list__body {
         padding: 100px;
+        text-align: center;
+    }
+
+    .movie-list__body.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
 
@@ -431,7 +440,6 @@ h1, h2, h3, h4, h5, p {
         gap: 20px;
         text-align: center;
     }
-
 
     .movie-list__header::before {
         background: transparent;
@@ -447,7 +455,9 @@ h1, h2, h3, h4, h5, p {
     }
 
 
-
+    .movie-list__body.watchlist .movie-list__body--remove-btn {
+        text-align: center;
+    }
 
     .movie-list__row {
         display: flex;
@@ -455,6 +465,13 @@ h1, h2, h3, h4, h5, p {
 
     }
 
+
+
+.movie-list__row .movie-list__row--text__container .movie-list__row--text__title {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
   
 }
 

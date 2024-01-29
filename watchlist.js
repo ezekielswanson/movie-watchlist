@@ -27,6 +27,8 @@ function updateUI() {
         displayAddedMovies();
         removeMovie();
         reducePadding();
+        addRemoveBtn();
+        clearWatchlist() 
     }
     
 }
@@ -156,3 +158,28 @@ function removeMovie() {
     });
 }
 
+
+
+function addRemoveBtn()  {
+    //create btn 
+    const btn = document.createElement('button');
+    btn.classList.add('movie-list__body--remove-btn');
+    btn.textContent = "Clear Watchlist"
+    //container 
+    const container = document.querySelector('.movie-list__body.watchlist');
+    container.insertBefore(btn, container.firstChild)
+    //container.appendChild(btn);
+
+    console.log(container);
+}
+
+
+//add function that when user clicks on btn local stoage clears 
+
+function clearWatchlist() {
+    const btn = document.querySelector('.movie-list__body--remove-btn');
+    btn.addEventListener('click', () => {
+        localStoage.clear()
+        
+    })
+}
