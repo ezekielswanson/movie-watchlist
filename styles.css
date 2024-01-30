@@ -75,6 +75,11 @@ h1, h2, h3, h4, h5, p {
     padding: 70px;
 }
 
+.movie-list__body.active.removed {
+    padding: 193px 201px 269px;
+}
+
+
 /**** END Global Styles ****/   
 
 

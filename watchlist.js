@@ -27,7 +27,7 @@ function updateUI() {
         displayAddedMovies();
         removeMovie();
         reducePadding();
-        addRemoveBtn();
+        removeBtn();
         clearWatchlist() 
     }
     
@@ -160,26 +160,41 @@ function removeMovie() {
 
 
 
-function addRemoveBtn()  {
+function removeBtn()  {
     //create btn 
     const btn = document.createElement('button');
     btn.classList.add('movie-list__body--remove-btn');
     btn.textContent = "Clear Watchlist"
+
     //container 
     const container = document.querySelector('.movie-list__body.watchlist');
     container.insertBefore(btn, container.firstChild)
-    //container.appendChild(btn);
+    
+    // Event listener to clear the watchlist
+    btn.addEventListener('click', () => {
+        localStorage.clear();
+        addedMovies = [];
+        displayAddedMovies();
+        addDisplayAfterMoviesRemoved()
 
-    console.log(container);
+    });
 }
 
 
-//add function that when user clicks on btn local stoage clears 
 
-function clearWatchlist() {
-    const btn = document.querySelector('.movie-list__body--remove-btn');
-    btn.addEventListener('click', () => {
-        localStoage.clear()
-        
-    })
+function addDisplayAfterMoviesRemoved() {
+    const container = document.querySelector('.movie-list__body.watchlist');
+    container.classList.add('removed')
+    container.innerHTML = `
+    <div class="movie-list__body--text-container">
+        <h2>Your watchlist is looking a little empty...</h2>
+        <a href="index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 18C13.9706 18 18 13.9706 18 9C18 4.02944 13.9706 0 9 0C4.02944 0 0 4.02944 0 9C0 13.9706 4.02944 18 9 18ZM10.125 5.625C10.125 5.00368 9.62132 4.5 9 4.5C8.37868 4.5 7.875 5.00368 7.875 5.625V7.875H5.625C5.00368 7.875 4.5 8.37868 4.5 9C4.5 9.62132 5.00368 10.125 5.625 10.125H7.875V12.375C7.875 12.9963 8.37868 13.5 9 13.5C9.62132 13.5 10.125 12.9963 10.125 12.375V10.125H12.375C12.9963 10.125 13.5 9.62132 13.5 9C13.5 8.37868 12.9963 7.875 12.375 7.875H10.125V5.625Z" fill="#363636"/>
+            </svg>
+            <h3>Let’s add some movies!</h3>
+        </a>
+    </div
+    
+    `
 }
