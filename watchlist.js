@@ -24,8 +24,7 @@ function updateUI() {
         displayAddedMovies();
         removeMovie();
         reducePadding();
-        removeBtn();
-        clearWatchlist() 
+        removeBtn()
     }
     
 }
@@ -152,10 +151,10 @@ function removeMovie() {
           displayAddedMovies();
 
           //Display message if no movies are in the watchlist  
-            //check if array's empty and display message
-            if (filteredMovies.length === 0) {
-                addDisplayAfterMoviesRemoved();
-              }
+          if (filteredMovies.length === 0) {
+            addDisplayAfterMoviesRemoved();
+            removeBtnNoDisplay();
+        }
 
         }
     });
@@ -164,23 +163,34 @@ function removeMovie() {
 
 
 function removeBtn()  {
+
     //create btn 
     const btn = document.createElement('button');
     btn.classList.add('movie-list__body--remove-btn');
     btn.textContent = "Clear Watchlist"
 
     //container 
-    const container = document.querySelector('.movie-list__body.watchlist');
-    container.insertBefore(btn, container.firstChild)
+    const container = document.querySelector('.watchlist-controls');
+    container.appendChild(btn);
+    console.log(container);
     
     // Event listener to clear the watchlist
     btn.addEventListener('click', () => {
         localStorage.clear();
         addedMovies = [];
         displayAddedMovies();
-        addDisplayAfterMoviesRemoved()
+        addDisplayAfterMoviesRemoved();
+        removeBtnNoDisplay();
+
 
     });
+
+}
+
+function removeBtnNoDisplay()  {
+    //get btn 
+    const btn = document.querySelector('.movie-list__body--remove-btn');
+    btn.classList.add('empty');
 }
 
 
