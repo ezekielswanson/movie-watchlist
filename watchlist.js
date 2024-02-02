@@ -1,6 +1,3 @@
-
-
-
 let addedMovies = [];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -151,8 +148,14 @@ function removeMovie() {
           //pass in movieArray array from local storage 
           console.log(addedMovies)
           
-          
+          //Update html
           displayAddedMovies();
+
+          //Display message if no movies are in the watchlist  
+            //check if array's empty and display message
+            if (filteredMovies.length === 0) {
+                addDisplayAfterMoviesRemoved();
+              }
 
         }
     });
@@ -198,3 +201,4 @@ function addDisplayAfterMoviesRemoved() {
     
     `
 }
+
