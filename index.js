@@ -11,7 +11,7 @@ document.querySelector('form button').addEventListener('click', async (e) => {
     //Form input for fetch
     const movieTitle = document.querySelector('#searchInput').value;
 
-    //Html var
+    //var
     let movieList = ''; 
 
     //Animation Display
@@ -21,9 +21,9 @@ document.querySelector('form button').addEventListener('click', async (e) => {
         const searchResponse = await fetch(`https://www.omdbapi.com/?apikey=f89c6c72&s=${movieTitle}`);
         const searchData = await searchResponse.json();
 
-       // console.log(searchData)
+       //console.log(searchData)
 
-        if (searchData.Search) {
+        if (searchData) {
             let movieDetailsPromises = searchData.Search.map(movie => {
                 const movieId = movie.imdbID;
                 return fetch(`https://www.omdbapi.com/?apikey=f89c6c72&i=${movieId}`).then(res => res.json());
