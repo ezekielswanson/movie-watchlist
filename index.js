@@ -100,9 +100,9 @@ function reducePadding() {
 
 //Loading animation
 function showLoader() {
-    const loaderHtml = '<div class="loader" id="loader"></div>';
+    const loaderHtml = '<div class="loader"></div>';
     const listContainer = document.querySelector('.movie-list__body');
-    listContainer.innerHTML = loaderHtml; // This replaces the content with the loader
+    listContainer.innerHTML = loaderHtml;
 }
 
 
@@ -127,9 +127,7 @@ document.querySelector('.movie-list__body').addEventListener('click', (e) => {
     const btn = e.target.closest('[data-movie-id]');
 
     if (btn) {
-        const selectedMovie = btn.dataset.movieId; 
-
-        //how do I get access to the movie object used to created html?
+        const selectedMovie = btn.dataset.movieId;  
         const movieEl = btn.closest('.movie-list__row')
         
         
@@ -139,7 +137,6 @@ document.querySelector('.movie-list__body').addEventListener('click', (e) => {
             rating: movieEl.querySelector('.movie-list__row--text__title p').textContent,
             runtime: movieEl.querySelector('.movie-list__row--text__info p:first-child').textContent,
             genre: movieEl.querySelector('.movie-list__row--text__info p:nth-child(2)').textContent,
-            //Var holds btn data attribute
             id: selectedMovie, 
             plot: movieEl.querySelector('.movie-list__row--text__info--desc p').textContent,
 

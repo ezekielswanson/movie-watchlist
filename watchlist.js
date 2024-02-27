@@ -21,8 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //check if movies are in local storage and then invoke
 function updateUI() {
 
-    //conditional to check if movies are in local storage   
-
+    //check if movies are in local storage   
     if (addedMovies.length > 0) {
         displayAddedMovies();
         removeMovie();
@@ -89,25 +88,17 @@ function renderHTML(movies) {
    
 }
 
-//where does renderHTML() get it's argument?
-//Can I define that argument in the function below? I think I can b/c let addedMovies = []; is global
 
 
 //render movies
 function displayAddedMovies() {
     const container = document.querySelector('.movie-list__body.watchlist');
     //log to see if the element is selected
-   // console.log(container)
+    //console.log(container)
     //define renterHTML argument with the addedMovies array
     container.innerHTML = renderHTML(addedMovies);
     
 }
-
-
-//remove the selected movie from local storgae on click
-//remove the movie with the spec id from the local storage
-//why does the entire array disappear when I click the button? Removed from local storage 
-//need to get only specifc object from array
 
 
 
@@ -118,11 +109,13 @@ function removeMovie() {
         const btn = event.target.closest('.movie-list__row--text__info--btn');
 
         if (btn && btn.hasAttribute('data-movie-id')) {
-            //Preventing bubbling
+
+            //Preventing bubbling to parent container
             event.stopImmediatePropagation(); 
 
-            const movieId = btn.getAttribute('data-movie-id'); 
-            console.log(movieId); // Log the movie ID
+            const movieId = btn.getAttribute('data-movie-id');
+            //Log the movie ID 
+            //console.log(movieId); 
 
             //gets me access to the array - still in a string from the server
             //this is a string
@@ -133,11 +126,10 @@ function removeMovie() {
             const selectedMovies = JSON.parse(movieToRemove);
 
             //log to ensure data's parsed
-            console.log(selectedMovies);   
+            //console.log(selectedMovies);   
 
-           //access movieToRemove array
            //filter out based on id movieId 
-           //as dewayne about shallow 
+           //If current id d/n match movieId
            const filteredMovies = selectedMovies.filter(movie => {
                 return movieId !== movie.id
            })
@@ -151,7 +143,7 @@ function removeMovie() {
           addedMovies = filteredMovies;
 
           //pass in movieArray array from local storage 
-         // console.log(addedMovies)
+          //console.log(addedMovies)
           
           //Update html
           displayAddedMovies();
