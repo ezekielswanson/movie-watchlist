@@ -100,11 +100,11 @@ function reducePadding() {
 
 //Loading animation
 function showLoader() {
-    const loaderHtml = '<div class="loader"></div>';
+    const loaderHtml = '<div class="loader" id="loader"></div>';
     const listContainer = document.querySelector('.movie-list__body');
     listContainer.innerHTML = loaderHtml; // This replaces the content with the loader
-  }
-  
+}
+
 
   function hideLoader() {
     const loader = document.getElementById('loader');
