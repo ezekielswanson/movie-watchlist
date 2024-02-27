@@ -1,3 +1,6 @@
+
+
+
 let addedMovies = [];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -49,7 +52,7 @@ function renderHTML(movies) {
     const watchListHTML = movies.map((movie) => {
 
         //logging to see if movie object renders
-       // console.log(movie)
+       //console.log(movie)
         return `
             <div class="movie-list__row">
             <img src="${movie.poster}">
@@ -122,9 +125,11 @@ function removeMovie() {
             console.log(movieId); // Log the movie ID
 
             //gets me access to the array - still in a string from the server
+            //this is a string
             const movieToRemove = localStorage.getItem("movieArray");
             
             //getting data from server parse it into usable data
+            //string into object here
             const selectedMovies = JSON.parse(movieToRemove);
 
             //log to ensure data's parsed
@@ -132,20 +137,21 @@ function removeMovie() {
 
            //access movieToRemove array
            //filter out based on id movieId 
+           //as dewayne about shallow 
            const filteredMovies = selectedMovies.filter(movie => {
                 return movieId !== movie.id
            })
 
-            console.log("Number of movies before filtering:", selectedMovies.length);
-            console.log("Number of movies after filtering:", filteredMovies.length);
+            //console.log("Number of movies before filtering:", selectedMovies.length);
+            //console.log("Number of movies after filtering:", filteredMovies.length);
 
-          //Updae local storage with filtered array
+          //Update local storage with filtered array
           localStorage.setItem('movieArray', JSON.stringify(filteredMovies))
 
           addedMovies = filteredMovies;
 
           //pass in movieArray array from local storage 
-          console.log(addedMovies)
+         // console.log(addedMovies)
           
           //Update html
           displayAddedMovies();
@@ -172,7 +178,7 @@ function removeBtn()  {
     //container 
     const container = document.querySelector('.watchlist-controls');
     container.appendChild(btn);
-    console.log(container);
+    //console.log(container);
     
     // Event listener to clear the watchlist
     btn.addEventListener('click', () => {

@@ -1,9 +1,3 @@
-/*Search Api
-
-get input value 
-get click eent on submit
-send api
-*/
 
 document.querySelector('form button').addEventListener('click', async (e) => {
     e.preventDefault(); 
@@ -19,6 +13,9 @@ document.querySelector('form button').addEventListener('click', async (e) => {
 
     //Html var
     let movieList = ''; 
+
+    //Animation Display
+    showLoader()
 
     try {
         const searchResponse = await fetch(`https://www.omdbapi.com/?apikey=f89c6c72&s=${movieTitle}`);
@@ -68,12 +65,17 @@ document.querySelector('form button').addEventListener('click', async (e) => {
 
 
             const listContainer  = document.querySelector('.movie-list__body');
+            //inset adjacent html
             listContainer.innerHTML = movieList;
 
     
         }
     } catch (error) {
         console.error('Error:', error);
+    }
+
+    finally {
+        hideLoader();
     }
 
    
@@ -94,6 +96,23 @@ function reducePadding() {
 
 }
 
+
+
+//Loading animation
+function showLoader() {
+    const loaderHtml = '<div class="loader"></div>';
+    const listContainer = document.querySelector('.movie-list__body');
+    listContainer.innerHTML = loaderHtml; // This replaces the content with the loader
+  }
+  
+
+  function hideLoader() {
+    const loader = document.getElementById('loader');
+    if (loader) {
+      loader.remove();
+    }
+  }
+  
 
 
 
@@ -129,7 +148,6 @@ document.querySelector('.movie-list__body').addEventListener('click', (e) => {
         
 
 
-
         addedMovies.push(movieObject)
 
 
@@ -148,7 +166,6 @@ function storeInLocalStorage(movieArray) {
     localStorage.setItem('movieArray',jsonString );
 
 }
-
 
 
 
